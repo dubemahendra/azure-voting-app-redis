@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage("Verify Banch") {
+        stage('Verify Banch') {
             steps {
-                echo $GIT_BRANCH
+                echo "$GIT_BRANCH"
             }       
                 
         }

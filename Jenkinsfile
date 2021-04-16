@@ -6,7 +6,11 @@ pipeline {
             steps {
                 echo "$GIT_BRANCH"
             }       
-                
+     stages {
+        stage('Hello World') {
+            steps {
+                echo "Hello World"
+            } 
         }
     }
 }

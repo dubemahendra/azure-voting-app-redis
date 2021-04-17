@@ -9,4 +9,13 @@ pipeline {
                 
         }
     }
+
+      stages {
+        stage('Jai Guru Dev') {
+            steps {
+                echo "Jai Guru Dev"
+            }       
+                
+        }
+    }  
 }

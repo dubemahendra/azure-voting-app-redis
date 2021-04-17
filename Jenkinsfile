@@ -1,21 +1,24 @@
 pipeline {
     agent any
-
     stages {
         stage('Verify Banch') {
             steps {
                 echo "$GIT_BRANCH"
-            }       
-                
-        }
+            }     
+         }
     }
-
-      stages {
-        stage('Jai Guru Dev') {
+        stage('Docker Build') {
             steps {
-                echo "Jai Guru Dev"
+               pwsh(sript: 'docker images -a')
+               pwsh(script: """
+               cd azure-vote/
+               docker images -a
+               docker build -t jenkins-pipeline .
+               docker images -a
+               cd.. 
+               """)
+                              
             }       
                 
-        }
-    }  
+        }      
 }
